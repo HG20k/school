@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    letter-spacing: 1px;
+    font-weight: 100;
+    color: aliceblue;
+}
+body{
+    overflow: hidden;
+}
+.main-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6rem;
+    width: 100vw;
+    position: fixed;
+    background-color: blueviolet;
+    height: 80px;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.196);
+}
+.main-menu .logo img{
+    width: 80px;
+}
+.main-menu .nav-list{
+    display: flex;
+    width: 80vw;
+    padding:  0 0.7vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.main-menu ul li{
+    padding: 0 10px;
+}
+.main-menu ul li a{
+    color: white;
+}
+.main-menu ul li a:hover{
+    background-color: rgb(166, 80, 246);
+    padding: 10px;
+    border-radius: 50px;
+    color: #fff;
+    transition: 0.8s;
+}
+.login-btn {
+    padding: 0.6rem 0.8rem;
+    margin-left:2vw ;
+    font-size: 1rem;
+    background: transparent;
+    cursor: pointer;
+}
+.login-btn:hover {
+    color: #fff;
+    background-color: rgb(101, 29, 134);
+    border: 1.5px solid rgb(69, 26, 65); 
+    transition: all ease-in-out 350ms;
+}
+.hamburger {
+    display: none;
+}
+.hamburger div{
+    width: 30px;
+    height: 3px;
+    background-color: antiquewhite;
+    margin: 5px;
+    transition: all 0.3s ease;    
+}
+
+@media screen and (max-width:900px) {
+    .main-menu {
+        position: fixed;
+        z-index: 1;
+    }
+    .hamburger{
+        display: block;
+        position: absolute;
+        cursor: pointer;
+        right: 5%;
+        top: 50%;
+        transform: translate(5% -50%);
+        z-index: 2;
+        transition: all 0.7s ease;
+    }
+    .nav-list{
+        background: #053742;
+        position: fixed;
+        opacity: 1;
+        height: 100vh;
+        width: 100%;
+        flex-direction: column;
+        /* clip-path: circle(50px); */
+        right: 0;
+        -webkit-clip-path: circle(50px at 90% -10%);
+        transition: all 1s ease-out;
+        pointer-events: none;
+    }
+    .nav-list.open{
+        /* border-radius: 50px; */
+        position: relative;
+        right: 0;
+        /* clip-path: circle(100%); */
+        -webkit-clip-path: circle(1000px at 90% -10%);
+        pointer-events: all;
+    }
+    .nav-list li {
+        opacity: 0;
+    }
+    li.fade{
+        opacity: 1;
+    }
+
+    /* Navigation Bar Icon on Click*/
+
+        .toggle .bars1{
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .toggle .bars2{
+            transition: all 0s ease;
+            width: 0;
+        }
+
+        .toggle .bars3{
+            transform: rotate(45deg) translate(-5px, -6px);
+        }
+}
